@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace MementoPattern
 {
-    internal class JoystickPointerUndoCareTaker
+    public class JoystickPointerUndoCareTaker
     {
+        private Stack<JoystickPointerMemento> joystickPointerMementos;
+
+        public JoystickPointerUndoCareTaker()
+        {
+            joystickPointerMementos = new Stack<JoystickPointerMemento>();
+        }
+
+        public JoystickPointerMemento JoystickPointerMemento
+        {
+            get
+            {
+                return joystickPointerMementos.Pop();
+            }
+            set
+            {
+                joystickPointerMementos.Push(value);
+            }
+        }
     }
 }

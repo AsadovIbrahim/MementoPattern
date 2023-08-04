@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MementoPattern
 {
-    internal class JoystickPointerMemento
+    public class JoystickPointerMemento
     {
+        public int X { get; set; }
+        public int O { get; set; }
+
+        public bool isPressed { get; set; }
     }
 }
